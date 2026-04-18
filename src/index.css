@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('./assets/fonts/EBGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('./assets/fonts/EBGaramond-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Pinyon Script';
+  src: url('./assets/fonts/PinyonScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monaspace Neon Frozen';
+  src: url('./assets/fonts/MonaspaceNeonFrozen-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@theme {
+  --font-cursive: "Pinyon Script", cursive;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "EB Garamond", serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "Monaspace Neon Frozen", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-parchment-50: var(--panel-bg);
+  --color-parchment-100: var(--bg-main);
+  --color-parchment-200: color-mix(in srgb, var(--bg-main), #000 5%);
+  --color-parchment-300: var(--border-main);
+  --color-parchment-400: color-mix(in srgb, var(--border-main), #000 10%);
+  --color-parchment-550: color-mix(in srgb, #c5a059, #1a1816 calc(var(--parchment-intensity, 0.5) * 20%));
+
+  --color-gold-50: #fbf8ef;
+  --color-gold-100: #f4edcf;
+  --color-gold-200: #e9db9e;
+  --color-gold-500: #c5a059;
+  --color-gold-600: #a68444;
+  --color-gold-700: #856936;
+  
+  --shadow-tactile: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+  --shadow-premium: 0 10px 15px -3px rgba(42, 39, 35, 0.1), 0 4px 6px -2px rgba(42,39,35,0.05);
+}
+
+@layer base {
+  :root {
+    --bg-main: #fcfaf2;
+    --text-main: #2a2723;
+    --panel-bg: #fdfcf7;
+    --border-main: #e8e4d9;
+    --parchment-intensity: 0.5;
+    --base-font-size: 18px;
+  }
+
+  .theme-parchment {
+    --bg-main: #fcfaf2;
+    --text-main: #2a2723;
+    --panel-bg: #fdfcf7;
+    --border-main: #e8e4d9;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    @apply font-sans antialiased selection:bg-gold-200 transition-colors duration-500;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Markdown Styles (Typeset for PDF and Screen) */
+.markdown-body {
+  @apply font-serif; /* Default body to Garamond */
+}
+.markdown-body h1 {
+  @apply text-5xl font-display font-medium mb-12 mt-4 text-center border-none leading-tight;
+  color: var(--text-main);
+}
+.markdown-body h2 {
+  @apply text-3xl font-display font-medium mb-8 mt-12 pb-3;
+  border-bottom: 0.5px solid var(--border-main);
+  color: var(--text-main);
+}
+.markdown-body h3 {
+  @apply text-2xl font-display font-medium mb-6 mt-10;
+  color: var(--text-main);
+}
+.markdown-body p {
+  @apply font-serif mb-6 text-justify;
+  font-size: var(--base-font-size);
+  line-height: 1.8;
+  color: var(--text-main);
+  hyphens: auto;
+}
+.markdown-body blockquote {
+  @apply italic border-l-2 border-gold-500/20 pl-8 my-10 py-2;
+  color: color-mix(in srgb, var(--text-main), transparent 15%);
+}
+.markdown-body ul, .markdown-body ol {
+  @apply mb-8 pl-10 font-serif;
+  font-size: var(--base-font-size);
+  line-height: 1.8;
+}
+.markdown-body li {
+  @apply mb-3;
+}
+.markdown-body code {
+  @apply font-mono px-1.5 py-0.5 rounded text-[0.9em];
+  background-color: color-mix(in srgb, var(--border-main), transparent 60%);
+  color: var(--color-gold-700);
+}
+.markdown-body pre {
+  @apply bg-[#1a1816] text-[#e8e4d9] p-8 rounded-xl my-10 overflow-x-auto shadow-sm;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.markdown-body pre code {
+  @apply bg-transparent p-0 text-inherit leading-relaxed block;
+  font-size: 0.85rem;
+}
+.markdown-body img {
+  @apply mx-auto my-14 shadow-premium rounded-lg max-w-[90%];
+}
+.markdown-body table {
+  @apply w-full border-collapse my-12 font-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.markdown-body th {
+  @apply p-4 text-left font-display font-medium border-b-2;
+  background-color: color-mix(in srgb, var(--bg-main), transparent 40%);
+  border-color: var(--border-main);
+  color: var(--text-main);
+}
+.markdown-body td {
+  @apply p-4 border-b;
+  border-color: color-mix(in srgb, var(--border-main), transparent 30%);
+  color: var(--text-main);
+}
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+.markdown-body hr {
+  @apply my-16 opacity-30;
+  border-color: var(--border-main);
+  border-top-width: 0.5px;
+}
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+  .parchment-bg {
+    background: #fdfcf7 !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
