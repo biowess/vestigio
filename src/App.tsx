@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; // Add hooks
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppShell } from './components/AppShell';
 import { EditorPage } from './pages/EditorPage';
 import { FilesPage } from './pages/FilesPage';
