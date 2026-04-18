@@ -1,6 +1,6 @@
 # Vestigio
 
-![Version](https://img.shields.io/badge/version-v1.0.0-7c3aed?style=for-the-badge&logo=semanticrelease&logoColor=white)
+![Version](https://img.shields.io/badge/version-v1.0.4-7c3aed?style=for-the-badge&logo=semanticrelease&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-10b981?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react&logoColor=000000)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript&logoColor=white)
