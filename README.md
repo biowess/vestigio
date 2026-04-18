@@ -13,7 +13,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Open_the_app-111827?style=for-the-badge&logo=github&logoColor=white)](https://biowess.github.io/vestigio)
 
-![Vestigio preview](assets/sc1.png)
+![Vestigio preview](src/sc1.png)
 
 A luxurious, local-first Markdown writing environment with live preview, local file management, and polished PDF export.
 
