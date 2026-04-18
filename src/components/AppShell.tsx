@@ -138,7 +138,7 @@ export function AppShell({ children }: AppShellProps) {
         style={{ backgroundColor: 'var(--panel-bg)', borderColor: 'var(--border-main)' }}
       >
         <span className="text-[10px] uppercase tracking-[0.2em] font-mono opacity-20">
-          Mechanical Writing Instrument • By Biowess © • Est. 2026
+          Mechanical Writing Instrument • By Biowess © 2026
         </span>
       </footer>
     </div>
